@@ -1,0 +1,53 @@
+
+1. Crear la base de datos
+
+CREATE DATABASE IF NOT EXISTS nttdataentrevista;
+USE nttdataentrevista;
+
+-- 2. Crear la tabla persona
+CREATE TABLE IF NOT EXISTS persona (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    genero VARCHAR(50),
+    edad INT,
+    identificacion VARCHAR(100) UNIQUE NOT NULL,
+    direccion VARCHAR(255),
+    telefono VARCHAR(50)
+);
+
+-- 3. Crear la tabla cliente
+CREATE TABLE IF NOT EXISTS cliente (
+    clienteid BIGINT AUTO_INCREMENT PRIMARY KEY,
+    contrasena VARCHAR(255),
+    estado TINYINT(1),
+    persona_id BIGINT UNIQUE,
+    FOREIGN KEY (persona_id) REFERENCES persona(id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+-- 4. Crear la tabla cuenta
+CREATE TABLE IF NOT EXISTS cuenta (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    numero_cuenta VARCHAR(100) UNIQUE NOT NULL,
+    tipo_cuenta VARCHAR(50) NOT NULL,
+    saldo_inicial DECIMAL(15,2) NOT NULL,
+    estado TINYINT(1) NOT NULL,
+    cliente_id BIGINT,
+    FOREIGN KEY (cliente_id) REFERENCES cliente(clienteid)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+-- 5. Crear la tabla movimiento
+CREATE TABLE IF NOT EXISTS movimiento (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    tipo_movimiento VARCHAR(50) NOT NULL,
+    valor DECIMAL(15,2) NOT NULL,
+    saldo_disponible DECIMAL(15,2) NOT NULL,
+    cuenta_id BIGINT,
+    FOREIGN KEY (cuenta_id) REFERENCES cuenta(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
