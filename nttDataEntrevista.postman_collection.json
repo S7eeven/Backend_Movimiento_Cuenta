@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "96bbeaef-46e5-411a-976c-5df3ca1e5896",
+		"name": "nttDataEntrevista",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Cliente-persona/clientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contraseña\": \"1024\",\r\n    \"estado\": true,\r\n    \"persona\": {\r\n        \"nombre\": \"Test1\",\r\n        \"genero\": \"M\",\r\n        \"edad\": 30,\r\n        \"identificacion\": \"2300072532\",\r\n        \"direccion\": \"QuitoTerminal\",\r\n        \"telefono\": \"0999390285\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta para el Cliente-Persona/cuentas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroCuenta\": \"222410\",\r\n    \"tipoCuenta\": \"Ahorro\",\r\n    \"saldoInicial\": 500.00,\r\n    \"estado\": true,\r\n    \"clienteId\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/cuentas",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar un Depósito para la Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/movimientos?numeroCuenta=222410&tipoMovimiento=Deposito&valor=100.00",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"movimientos"
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "222410"
+						},
+						{
+							"key": "tipoMovimiento",
+							"value": "Deposito"
+						},
+						{
+							"key": "valor",
+							"value": "100.00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar un Retiro para la Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/movimientos?numeroCuenta=222410&tipoMovimiento=Retiro&valor=-200.00",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"movimientos"
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "222410"
+						},
+						{
+							"key": "tipoMovimiento",
+							"value": "Retiro"
+						},
+						{
+							"key": "valor",
+							"value": "-200.00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Movimientos para la Cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/movimientos?numeroCuenta=222410",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"movimientos"
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "222410"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Reporte Cliente Rango de Fecha y Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/reportes?clienteId=5&fechaInicio=2024-01-01&fechaFin=2024-10-13",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"reportes"
+					],
+					"query": [
+						{
+							"key": "clienteId",
+							"value": "5"
+						},
+						{
+							"key": "fechaInicio",
+							"value": "2024-01-01"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2024-10-13"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
