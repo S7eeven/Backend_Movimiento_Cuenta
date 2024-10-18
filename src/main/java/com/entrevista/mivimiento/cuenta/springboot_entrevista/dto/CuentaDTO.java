@@ -9,7 +9,6 @@ public class CuentaDTO {
     private BigDecimal saldoInicial;
     private List<MovimientoDTO> movimientos;
 
-    // Getters y Setters
     public String getNumeroCuenta() {
         return numeroCuenta;
     }

@@ -13,7 +13,7 @@ public class CuentaService {
     private CuentaRepository cuentaRepository;
 
     public Cuenta crearCuenta(Cuenta cuenta) {
-        // Opcional: Verificar si el cliente existe llamando al Cliente-Service
+        //Verificar si el cliente existe llamando al Cliente-Service
         return cuentaRepository.save(cuenta);
     }
 

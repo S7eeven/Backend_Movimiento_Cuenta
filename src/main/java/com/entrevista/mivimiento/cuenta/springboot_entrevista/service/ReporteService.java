@@ -27,7 +27,7 @@ public class ReporteService {
     private ClienteClient clienteClient;
 
     public EstadoCuentaDTO generarEstadoCuenta(Long clienteId, LocalDate fechaInicio, LocalDate fechaFin) {
-        // Obtener datos del cliente desde Cliente-Service
+        // Obtenemos datos del cliente desde Cliente-Service
         ClienteDTO cliente = clienteClient.obtenerClientePorId(clienteId);
         if(cliente == null) {
             throw new ResourceNotFoundException("Cliente no encontrado con id " + clienteId);

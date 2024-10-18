@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.entrevista.mivimiento.cuenta.springboot_entrevista.controller.MovimientoController;
 import com.entrevista.mivimiento.cuenta.springboot_entrevista.entity.Movimiento;
 import com.entrevista.mivimiento.cuenta.springboot_entrevista.service.MovimientoService;
-
 import org.springframework.http.MediaType;
 
 @WebMvcTest(MovimientoController.class)
@@ -39,7 +38,7 @@ public class MovimientoControllerTest {
                 Mockito.any(BigDecimal.class)))
                 .thenReturn(movimiento);
 
-        mockMvc.perform(post("/movimientos")
+        mockMvc.perform(post("/api/movimientos")
                 .param("numeroCuenta", "225487")
                 .param("tipoMovimiento", "Deposito")
                 .param("valor", "600")

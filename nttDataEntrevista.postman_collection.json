@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"contraseña\": \"1024\",\r\n    \"estado\": true,\r\n    \"persona\": {\r\n        \"nombre\": \"Test1\",\r\n        \"genero\": \"M\",\r\n        \"edad\": 30,\r\n        \"identificacion\": \"2300072532\",\r\n        \"direccion\": \"QuitoTerminal\",\r\n        \"telefono\": \"0999390285\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"contraseña\": \"1125\",\r\n    \"estado\": true,\r\n    \"persona\": {\r\n        \"nombre\": \"nttDta2\",\r\n        \"genero\": \"M\",\r\n        \"edad\": 20,\r\n        \"identificacion\": \"2300182532\",\r\n        \"direccion\": \"QuitoTerminal\",\r\n        \"telefono\": \"0999390775\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,12 +20,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/clientes",
+					"raw": "localhost:8081/api/clientes",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
+						"api",
 						"clientes"
 					]
 				}
@@ -39,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"numeroCuenta\": \"222410\",\r\n    \"tipoCuenta\": \"Ahorro\",\r\n    \"saldoInicial\": 500.00,\r\n    \"estado\": true,\r\n    \"clienteId\": 5\r\n}",
+					"raw": "{\r\n    \"numeroCuenta\": \"233411\",\r\n    \"tipoCuenta\": \"Ahorro\",\r\n    \"saldoInicial\": 800.00,\r\n    \"estado\": true,\r\n    \"clienteId\": 7\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -47,12 +48,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8082/cuentas",
+					"raw": "localhost:8082/api/cuentas",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
+						"api",
 						"cuentas"
 					]
 				}
@@ -74,18 +76,19 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8082/movimientos?numeroCuenta=222410&tipoMovimiento=Deposito&valor=100.00",
+					"raw": "localhost:8082/api/movimientos?numeroCuenta=233411&tipoMovimiento=Deposito&valor=100.00",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
+						"api",
 						"movimientos"
 					],
 					"query": [
 						{
 							"key": "numeroCuenta",
-							"value": "222410"
+							"value": "233411"
 						},
 						{
 							"key": "tipoMovimiento",
@@ -106,18 +109,19 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:8082/movimientos?numeroCuenta=222410&tipoMovimiento=Retiro&valor=-200.00",
+					"raw": "localhost:8082/api/movimientos?numeroCuenta=233411&tipoMovimiento=Retiro&valor=-10.00",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
+						"api",
 						"movimientos"
 					],
 					"query": [
 						{
 							"key": "numeroCuenta",
-							"value": "222410"
+							"value": "233411"
 						},
 						{
 							"key": "tipoMovimiento",
@@ -125,7 +129,7 @@
 						},
 						{
 							"key": "valor",
-							"value": "-200.00"
+							"value": "-10.00"
 						}
 					]
 				}
@@ -138,18 +142,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8082/movimientos?numeroCuenta=222410",
+					"raw": "localhost:8082/api/movimientos?numeroCuenta=233411",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
+						"api",
 						"movimientos"
 					],
 					"query": [
 						{
 							"key": "numeroCuenta",
-							"value": "222410"
+							"value": "233411"
 						}
 					]
 				}
@@ -162,18 +167,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8082/reportes?clienteId=5&fechaInicio=2024-01-01&fechaFin=2024-10-13",
+					"raw": "localhost:8082/api/reportes?clienteId=7&fechaInicio=2024-01-01&fechaFin=2024-10-18",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
+						"api",
 						"reportes"
 					],
 					"query": [
 						{
 							"key": "clienteId",
-							"value": "5"
+							"value": "7"
 						},
 						{
 							"key": "fechaInicio",
@@ -181,7 +187,7 @@
 						},
 						{
 							"key": "fechaFin",
-							"value": "2024-10-13"
+							"value": "2024-10-18"
 						}
 					]
 				}

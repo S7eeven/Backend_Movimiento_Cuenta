@@ -28,5 +28,5 @@ public class Cuenta {
     @Column(nullable = false)
     private Boolean estado;
 
-    private Long clienteId; // Referencia al Cliente en Cliente-Service
+    private Long clienteId;
 }

@@ -26,5 +26,5 @@ public class Movimiento {
     @Column(precision = 15, scale = 2)
     private BigDecimal saldoDisponible;
 
-    private Long cuentaId; // Referencia a Cuenta
+    private Long cuentaId;
 }

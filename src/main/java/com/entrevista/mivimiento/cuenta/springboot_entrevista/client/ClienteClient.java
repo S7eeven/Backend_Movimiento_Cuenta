@@ -7,6 +7,6 @@ import com.entrevista.mivimiento.cuenta.springboot_entrevista.dto.ClienteDTO;;
 
 @FeignClient(name = "cliente-service", url = "${cliente.service.url}")
 public interface ClienteClient {
-    @GetMapping("/clientes/{id}/dto")
+    @GetMapping("/api/clientes/{id}/dto")
     ClienteDTO obtenerClientePorId(@PathVariable("id") Long id);
 }

@@ -7,7 +7,6 @@ public class EstadoCuentaDTO {
     private String nombreCliente;
     private List<CuentaDTO> cuentas;
 
-    // Getters y Setters
     public Long getClienteId() {
         return clienteId;
     }

@@ -10,7 +10,6 @@ public class MovimientoDTO {
     private BigDecimal valor;
     private BigDecimal saldoDisponible;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

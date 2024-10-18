@@ -8,7 +8,7 @@ import com.entrevista.mivimiento.cuenta.springboot_entrevista.entity.Cuenta;
 import com.entrevista.mivimiento.cuenta.springboot_entrevista.service.CuentaService;
 
 @RestController
-@RequestMapping("/cuentas")
+@RequestMapping("/api/cuentas")
 public class CuentaController {
     @Autowired
     private CuentaService cuentaService;

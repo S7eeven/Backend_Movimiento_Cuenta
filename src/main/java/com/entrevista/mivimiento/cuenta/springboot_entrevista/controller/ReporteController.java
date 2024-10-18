@@ -9,7 +9,7 @@ import com.entrevista.mivimiento.cuenta.springboot_entrevista.dto.EstadoCuentaDT
 import com.entrevista.mivimiento.cuenta.springboot_entrevista.service.ReporteService;
 
 @RestController
-@RequestMapping("/reportes")
+@RequestMapping("/api/reportes")
 public class ReporteController {
     @Autowired
     private ReporteService reporteService;
